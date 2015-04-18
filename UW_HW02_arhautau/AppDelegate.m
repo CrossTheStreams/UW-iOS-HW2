@@ -7,8 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "DataViewController.h"
+#import "ColorViewController.h"
+#import "TabBarDelegate.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <UITabBarControllerDelegate>
+
+@property (nonatomic, strong)TabBarDelegate *tabBarDelegate;
 
 @end
 
@@ -17,6 +22,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor lightGrayColor];
+    
+    UITabBarController *tabViewController = [[UITabBarController alloc] init];
+
+    TabBarDelegate *tabBarDelegate = [[TabBarDelegate alloc] init];
+    [self setTabBarDelegate: tabBarDelegate];
+    [tabViewController setDelegate: tabBarDelegate];
+    
+    ColorViewController *colorVC = [[ColorViewController alloc] initWithNibName:@"ColorViewController" bundle: nil];
+    UITabBarItem* colorTabBarItem = [[UITabBarItem alloc] initWithTitle:@"Colors" image:[UIImage imageNamed:@"colors"] tag:0];
+    [colorVC setTabBarItem:colorTabBarItem];
+    
+    DataViewController *dataVC = [[DataViewController alloc] initWithNibName:@"DataViewController" bundle:nil];
+    UITabBarItem* dataTabBarItem = [[UITabBarItem alloc] initWithTitle:@"Data" image:[UIImage imageNamed:@"data"] tag:1];
+    [dataVC setTabBarItem:dataTabBarItem];
+
+    [tabViewController setViewControllers:@[colorVC, dataVC]];
+    
+    self.window.rootViewController = tabViewController;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
