@@ -7,6 +7,7 @@
 //
 
 #import "DataViewController.h"
+#import "UIViewController+ColorCounts.h"
 
 @interface DataViewController ()
 
@@ -22,7 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        NSLog(@"loaded");
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -30,6 +30,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void) viewWillAppear:(BOOL)animated {
+    NSMutableDictionary *colorCount = [self colorCounts];
+    [[self redCountLabel] setText: [[colorCount objectForKey:@"red"] stringValue]];
+    [[self greenCountLabel] setText: [[colorCount objectForKey:@"green"] stringValue]];
+    [[self blueCountLabel] setText: [[colorCount objectForKey:@"blue"] stringValue]];
+}
+
+- (IBAction)didTapResetButton:(id)sender {
+    
+}
+
 
 /*
 #pragma mark - Navigation
