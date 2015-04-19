@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  ColorCounterTabBarController.h
 //  UW_HW02_arhautau
 //
 //  Created by Andrew Hautau on 4/18/15.
@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface ColorCounterTabBarController : UITabBarController
 
-@property (strong, nonatomic) UIWindow *window;
-
-
+@property (nonatomic, strong) NSMutableDictionary *colorCounts;
 
 @end
-

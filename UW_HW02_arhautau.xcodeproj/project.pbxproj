@@ -12,7 +12,6 @@
 		F932126B1AE2E9350065D1EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F932126A1AE2E9350065D1EA /* Images.xcassets */; };
 		F932126E1AE2E9350065D1EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932126C1AE2E9350065D1EA /* LaunchScreen.xib */; };
 		F932127A1AE2E9350065D1EA /* UW_HW02_arhautauTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F93212791AE2E9350065D1EA /* UW_HW02_arhautauTests.m */; };
-		F93212851AE2EA9D0065D1EA /* UIColor+UWExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F93212841AE2EA9D0065D1EA /* UIColor+UWExtensions.m */; };
 		F932128A1AE2EAAF0065D1EA /* colors.png in Resources */ = {isa = PBXBuildFile; fileRef = F93212861AE2EAAF0065D1EA /* colors.png */; };
 		F932128B1AE2EAAF0065D1EA /* colors@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F93212871AE2EAAF0065D1EA /* colors@2x.png */; };
 		F932128C1AE2EAAF0065D1EA /* data.png in Resources */ = {isa = PBXBuildFile; fileRef = F93212881AE2EAAF0065D1EA /* data.png */; };
@@ -21,9 +20,10 @@
 		F93212971AE2F1490065D1EA /* DataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93212951AE2F1490065D1EA /* DataViewController.xib */; };
 		F932129B1AE2F1620065D1EA /* ColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F93212991AE2F1620065D1EA /* ColorViewController.m */; };
 		F932129C1AE2F1620065D1EA /* ColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F932129A1AE2F1620065D1EA /* ColorViewController.xib */; };
-		F93212A01AE2F2CB0065D1EA /* TabBarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F932129F1AE2F2CB0065D1EA /* TabBarDelegate.m */; };
 		F93212A51AE318930065D1EA /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F93212A31AE318930065D1EA /* ModalViewController.m */; };
 		F93212A61AE318930065D1EA /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93212A41AE318930065D1EA /* ModalViewController.xib */; };
+		F93212AF1AE34AF10065D1EA /* UIViewController+ColorCounts.m in Sources */ = {isa = PBXBuildFile; fileRef = F93212AE1AE34AF10065D1EA /* UIViewController+ColorCounts.m */; };
+		F93212B21AE34B4B0065D1EA /* ColorCounterTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F93212B11AE34B4B0065D1EA /* ColorCounterTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +47,6 @@
 		F93212731AE2E9350065D1EA /* UW_HW02_arhautauTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UW_HW02_arhautauTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93212781AE2E9350065D1EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F93212791AE2E9350065D1EA /* UW_HW02_arhautauTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UW_HW02_arhautauTests.m; sourceTree = "<group>"; };
-		F93212831AE2EA9D0065D1EA /* UIColor+UWExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UWExtensions.h"; sourceTree = "<group>"; };
-		F93212841AE2EA9D0065D1EA /* UIColor+UWExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UWExtensions.m"; sourceTree = "<group>"; };
 		F93212861AE2EAAF0065D1EA /* colors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colors.png; sourceTree = "<group>"; };
 		F93212871AE2EAAF0065D1EA /* colors@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "colors@2x.png"; sourceTree = "<group>"; };
 		F93212881AE2EAAF0065D1EA /* data.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = data.png; sourceTree = "<group>"; };
@@ -59,11 +57,13 @@
 		F93212981AE2F1620065D1EA /* ColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorViewController.h; sourceTree = "<group>"; };
 		F93212991AE2F1620065D1EA /* ColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorViewController.m; sourceTree = "<group>"; };
 		F932129A1AE2F1620065D1EA /* ColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorViewController.xib; sourceTree = "<group>"; };
-		F932129E1AE2F2CB0065D1EA /* TabBarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarDelegate.h; sourceTree = "<group>"; };
-		F932129F1AE2F2CB0065D1EA /* TabBarDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarDelegate.m; sourceTree = "<group>"; };
 		F93212A21AE318930065D1EA /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
 		F93212A31AE318930065D1EA /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
 		F93212A41AE318930065D1EA /* ModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
+		F93212AD1AE34AF10065D1EA /* UIViewController+ColorCounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ColorCounts.h"; sourceTree = "<group>"; };
+		F93212AE1AE34AF10065D1EA /* UIViewController+ColorCounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ColorCounts.m"; sourceTree = "<group>"; };
+		F93212B01AE34B4B0065D1EA /* ColorCounterTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCounterTabBarController.h; sourceTree = "<group>"; };
+		F93212B11AE34B4B0065D1EA /* ColorCounterTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorCounterTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,15 +105,16 @@
 		F932125C1AE2E9350065D1EA /* UW_HW02_arhautau */ = {
 			isa = PBXGroup;
 			children = (
-				F93212A11AE2F2D60065D1EA /* Delegates */,
 				F932129D1AE2F16D0065D1EA /* Controllers */,
-				F93212831AE2EA9D0065D1EA /* UIColor+UWExtensions.h */,
-				F93212841AE2EA9D0065D1EA /* UIColor+UWExtensions.m */,
 				F93212621AE2E9350065D1EA /* AppDelegate.m */,
 				F93212611AE2E9350065D1EA /* AppDelegate.h */,
 				F932126A1AE2E9350065D1EA /* Images.xcassets */,
 				F932126C1AE2E9350065D1EA /* LaunchScreen.xib */,
 				F932125D1AE2E9350065D1EA /* Supporting Files */,
+				F93212AD1AE34AF10065D1EA /* UIViewController+ColorCounts.h */,
+				F93212AE1AE34AF10065D1EA /* UIViewController+ColorCounts.m */,
+				F93212B01AE34B4B0065D1EA /* ColorCounterTabBarController.h */,
+				F93212B11AE34B4B0065D1EA /* ColorCounterTabBarController.m */,
 			);
 			path = UW_HW02_arhautau;
 			sourceTree = "<group>";
@@ -162,15 +163,6 @@
 				F93212A41AE318930065D1EA /* ModalViewController.xib */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		F93212A11AE2F2D60065D1EA /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				F932129E1AE2F2CB0065D1EA /* TabBarDelegate.h */,
-				F932129F1AE2F2CB0065D1EA /* TabBarDelegate.m */,
-			);
-			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,11 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F93212B21AE34B4B0065D1EA /* ColorCounterTabBarController.m in Sources */,
+				F93212AF1AE34AF10065D1EA /* UIViewController+ColorCounts.m in Sources */,
 				F93212961AE2F1490065D1EA /* DataViewController.m in Sources */,
 				F932129B1AE2F1620065D1EA /* ColorViewController.m in Sources */,
 				F93212A51AE318930065D1EA /* ModalViewController.m in Sources */,
-				F93212A01AE2F2CB0065D1EA /* TabBarDelegate.m in Sources */,
-				F93212851AE2EA9D0065D1EA /* UIColor+UWExtensions.m in Sources */,
 				F93212631AE2E9350065D1EA /* AppDelegate.m in Sources */,
 				F93212601AE2E9350065D1EA /* main.m in Sources */,
 			);

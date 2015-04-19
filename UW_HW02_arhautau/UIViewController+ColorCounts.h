@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  UIViewController+ColorCounts.h
 //  UW_HW02_arhautau
 //
 //  Created by Andrew Hautau on 4/18/15.
@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface UIViewController (ColorCounts)
 
-@property (strong, nonatomic) UIWindow *window;
-
-
+-(NSMutableDictionary*) colorCounts;
 
 @end
-

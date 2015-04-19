@@ -8,12 +8,10 @@
 
 #import "AppDelegate.h"
 #import "DataViewController.h"
+#import "ColorCounterTabBarController.h"
 #import "ColorViewController.h"
-#import "TabBarDelegate.h"
 
-@interface AppDelegate () <UITabBarControllerDelegate>
-
-@property (nonatomic, strong)TabBarDelegate *tabBarDelegate;
+@interface AppDelegate ()
 
 
 @end
@@ -28,11 +26,8 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor lightGrayColor];
     
-    UITabBarController *tabViewController = [[UITabBarController alloc] init];
-
-    TabBarDelegate *tabBarDelegate = [[TabBarDelegate alloc] init];
-    [self setTabBarDelegate: tabBarDelegate];
-    [tabViewController setDelegate: tabBarDelegate];
+    ColorCounterTabBarController *tabViewController = [[ColorCounterTabBarController alloc] init];
+    [tabViewController setColorCounts: [NSMutableDictionary dictionaryWithDictionary:@{@"red": @0, @"green": @0, @"blue": @0}]];
     
     ColorViewController *colorVC = [[ColorViewController alloc] initWithNibName:@"ColorViewController" bundle: nil];
     UITabBarItem* colorTabBarItem = [[UITabBarItem alloc] initWithTitle:@"Colors" image:[UIImage imageNamed:@"colors"] tag:0];

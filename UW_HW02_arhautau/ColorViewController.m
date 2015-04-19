@@ -7,11 +7,10 @@
 //
 
 #import "ColorViewController.h"
+#import "UIViewController+ColorCounts.h"
 #import "ModalViewController.h"
 
 @interface ColorViewController ()
-
-@property (nonatomic, strong) NSMutableDictionary *colorCounts;
 
 @property (weak, nonatomic) IBOutlet UIButton *redButton;
 @property (weak, nonatomic) IBOutlet UIButton *greenButton;
@@ -28,8 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self setColorCounts: [NSMutableDictionary dictionaryWithDictionary:@{@"red": @0, @"green": @0, @"blue": @0}]];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -77,6 +74,7 @@
 
     [self presentViewController:modalVC animated:YES completion:nil];
 }
+
 
 /*
 #pragma mark - Navigation

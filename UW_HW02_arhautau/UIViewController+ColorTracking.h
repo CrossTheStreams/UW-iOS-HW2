@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  UIViewController+ColorTracking.h
 //  UW_HW02_arhautau
 //
 //  Created by Andrew Hautau on 4/18/15.
@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
-
+@interface UIViewController (ColorTracking)
 
 @end
-
