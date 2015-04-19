@@ -10,6 +10,12 @@
 
 @interface DataViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *redCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *greenCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *blueCountLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
+
 @end
 
 @implementation DataViewController

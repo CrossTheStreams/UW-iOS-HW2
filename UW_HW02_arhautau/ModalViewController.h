@@ -10,4 +10,6 @@
 
 @interface ModalViewController : UIViewController
 
+@property (nonatomic, strong) NSString *colorCount;
+
 @end

@@ -7,8 +7,20 @@
 //
 
 #import "ColorViewController.h"
+#import "ModalViewController.h"
 
 @interface ColorViewController ()
+
+@property (nonatomic, strong) NSMutableDictionary *colorCounts;
+
+@property (weak, nonatomic) IBOutlet UIButton *redButton;
+@property (weak, nonatomic) IBOutlet UIButton *greenButton;
+@property (weak, nonatomic) IBOutlet UIButton *blueButton;
+@property (weak, nonatomic) IBOutlet UIButton *customColorButton;
+
+@property (weak, nonatomic) IBOutlet UITextField *redValueField;
+@property (weak, nonatomic) IBOutlet UITextField *greenValueField;
+@property (weak, nonatomic) IBOutlet UITextField *blueValueField;
 
 @end
 
@@ -16,13 +28,54 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    [self setColorCounts: [NSMutableDictionary dictionaryWithDictionary:@{@"red": @0, @"green": @0, @"blue": @0}]];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)didTapRedButton:(id)sender {
+    UIColor *red = [UIColor redColor];
+    [self displayModalWithBackgroundColor:red AndIncrementCountForColor:@"red"];
+}
+
+- (IBAction)didTapGreenButton:(id)sender {
+    UIColor *green = [UIColor greenColor];
+    [self displayModalWithBackgroundColor: green AndIncrementCountForColor:@"green"];
+}
+
+- (IBAction)didTapBlueButton:(id)sender {
+    UIColor *blue = [UIColor blueColor];
+    [self displayModalWithBackgroundColor:blue AndIncrementCountForColor:@"blue"];
+}
+- (IBAction)didTapCustomButton:(id)sender {
+    // Using RGB Values 0 to 255
+    CGFloat red = MAX(0.0f, MIN(1.0f, ([[self.redValueField text] floatValue]) / 255.0f));
+    CGFloat green = MAX(0.0f, MIN(1.0f, ([[self.greenValueField text] floatValue]) / 255.0f));
+    CGFloat blue = MAX(0.0f, MIN(1.0f, ([[self.blueValueField text] intValue]) / 255.0f));
+    
+    UIColor *customColor = [UIColor colorWithRed:red green:green blue:blue alpha: 1];
+    
+    [self displayModalWithBackgroundColor:customColor AndIncrementCountForColor:nil];
+}
+
+-(void) displayModalWithBackgroundColor:(UIColor*) backgroundColor AndIncrementCountForColor:(NSString*) color {
+    
+    ModalViewController *modalVC = [[ModalViewController alloc] initWithNibName:@"ModalViewController" bundle:nil];
+    [[modalVC view] setBackgroundColor:backgroundColor];
+    
+    if (color) {
+        NSNumber *count = [self.colorCounts valueForKey:color];
+        NSNumber *newCount = [NSNumber numberWithInt: [count intValue] + 1];
+        [self.colorCounts setValue:newCount forKey:color];
+        [modalVC setColorCount: [newCount stringValue]];
+    }
+
+    [self presentViewController:modalVC animated:YES completion:nil];
 }
 
 /*

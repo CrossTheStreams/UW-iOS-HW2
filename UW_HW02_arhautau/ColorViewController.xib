@@ -6,6 +6,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorViewController">
             <connections>
+                <outlet property="blueButton" destination="tfO-1h-Lsb" id="UXa-Db-CqH"/>
+                <outlet property="blueValueField" destination="xMW-Et-Whj" id="hyU-F8-Q0a"/>
+                <outlet property="customColorButton" destination="yXI-qV-TJ1" id="si1-ni-1dn"/>
+                <outlet property="greenButton" destination="WKp-yz-aEb" id="yLN-n1-dox"/>
+                <outlet property="greenValueField" destination="GbF-vS-una" id="Bd1-aq-F2T"/>
+                <outlet property="redButton" destination="NPC-bS-d1i" id="wub-sk-emJ"/>
+                <outlet property="redValueField" destination="N7t-KK-lEL" id="jIy-vd-8Y8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,18 +26,27 @@
                     <state key="normal" title="Green">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="didTapGreenButton:" destination="-1" eventType="touchUpInside" id="L3U-mk-G1V"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfO-1h-Lsb">
                     <rect key="frame" x="547" y="33" width="45" height="30"/>
                     <state key="normal" title="Blue">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="didTapBlueButton:" destination="-1" eventType="touchUpInside" id="2Ab-95-yzC"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXI-qV-TJ1">
                     <rect key="frame" x="273" y="301" width="54" height="30"/>
                     <state key="normal" title="Custom">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="didTapCustomButton:" destination="-1" eventType="touchUpInside" id="HhT-1t-N9H"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Green" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GbF-vS-una">
                     <rect key="frame" x="263" y="255" width="75" height="30"/>
@@ -52,6 +68,9 @@
                     <state key="normal" title="Red">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="didTapRedButton:" destination="-1" eventType="touchUpInside" id="F1L-6V-IrF"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

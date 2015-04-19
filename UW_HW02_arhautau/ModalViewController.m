@@ -10,18 +10,32 @@
 
 @interface ModalViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *dismissButton;
+
 @end
 
 @implementation ModalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)dismissButtonTapped:(id)sender {
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    if (self.colorCount) {
+        [[self countLabel] setText: self.colorCount];
+    }
 }
 
 /*
