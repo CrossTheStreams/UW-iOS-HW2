@@ -8,6 +8,7 @@
 
 #import "DataViewController.h"
 #import "UIViewController+ColorCounts.h"
+#import "ColorCounterTabBarController.h"
 
 @interface DataViewController ()
 
@@ -32,6 +33,10 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
+    [self updateCountLabels];
+}
+
+-(void) updateCountLabels {
     NSMutableDictionary *colorCount = [self colorCounts];
     [[self redCountLabel] setText: [[colorCount objectForKey:@"red"] stringValue]];
     [[self greenCountLabel] setText: [[colorCount objectForKey:@"green"] stringValue]];
@@ -39,6 +44,23 @@
 }
 
 - (IBAction)didTapResetButton:(id)sender {
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Reset Color Counts?"
+                                                                   message:@"Reseting will set all color counts to 0."
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction* resetAction = [UIAlertAction actionWithTitle:@"Reset" style:UIAlertActionStyleDestructive
+                                                         handler:^(UIAlertAction *action) {
+                                                             ColorCounterTabBarController *tabBarController = [self tabBarController];
+                                                             [tabBarController setColorCounts: [NSMutableDictionary dictionaryWithDictionary:@{@"red": @0, @"green": @0, @"blue": @0}]];
+                                                             [self updateCountLabels];
+                                                         }];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+                                                          handler:nil];
+    [alert addAction: resetAction];
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
 
